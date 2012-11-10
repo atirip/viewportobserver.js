@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<!--
+Image used in this demo from: http://en.wikipedia.org/wiki/File:Freak_Out,_Oblivion,_night.jpg
+Photograph © Andrew Dunn, 23 June 2005.
+Website: http://www.andrewdunnphoto.com/
+-->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+    	box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
+		position: relative;
+	}
+
+	body {
+		padding: 10px;
+		background: #999;
+		width: 500px;
+		margin: 0 auto;
+	}
+
+	.cat {
+		width: 495px;
+		height: 600px;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background: #FFF;
+	}
+
+	.cat>img {
+		border: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+</style>
+</head>
+<body>
+
+
+<div class="cat"><img src="cd.gif" data-src="cat.jpg?19"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?18"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?17"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?16"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?15"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?14"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?13"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?12"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?11"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?10"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?9"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?8"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?7"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?6"></div><div class="cat"><img src="cd.gif" data-src="cat.jpg?5"></div><div class="cat"><img src="cat.jpg?4" data-src="cat.jpg?4"></div><div class="cat"><img src="cat.jpg?3" data-src="cat.jpg?3"></div><div class="cat"><img src="cat.jpg?2" data-src="cat.jpg?2"></div><div class="cat"><img src="cat.jpg?1" data-src="cat.jpg?1"></div><div class="cat"><img src="cat.jpg?0" data-src="cat.jpg?0"></div>
+
+<script src="../viewportobserver-min.js"></script>
+<script>
+	var doc = document
+	,	qsa = function(q){
+			if (doc.querySelectorAll) return doc.querySelectorAll(q)
+
+			var styles = doc.styleSheets[0] || doc.createStyleSheet()
+			,	tags = doc.all
+			,	len = tags.length
+			,	i = 0
+			, 	res = []
+			styles.addRule(q, 'f:b')
+			while(len--) tags[len].currentStyle.f && res.push( tags[len] )
+			styles.removeRule(0)
+			return res
+		}
+
+	,	setAttr
+	,	getAttr
+	,	div = doc.createElement('div')
+
+	,	reveal = function(node) {
+			node = node.firstChild;
+			if ('cd.gif' == getAttr(node, 'src') ) {
+				setAttr(node, 'src', getAttr(node, 'data-src') );
+			}
+		}
+
+	// cross-browser set/get attribute
+	div.setAttribute("data-test", "t")
+	if ( div.getAttribute("data-test") !== "t" ) {
+		// lifted from jQuery for IE<8
+		setAttr = function( elem, name, value ) {
+			var ret = elem.getAttributeNode( name )
+			if ( !ret ) {
+				ret = doc.createAttribute( name )
+				elem.setAttributeNode( ret )
+			}
+			ret.nodeValue = value + ""
+		};
+		getAttr = function( elem, name ) {
+			var ret = elem.getAttributeNode( name )
+			return ret.nodeValue
+		};
+	} else {
+		setAttr = function( node, name, val ) {
+			node.setAttribute(name, val)
+		};
+		getAttr = function( node, name ) {
+			return node.getAttribute(name)
+		};
+	}
+
+
+
+	atirip.viewportobserver( qsa('.cat'), {
+		reveal: reveal
+	});
+	
+</script>
+</body>
+</html>
