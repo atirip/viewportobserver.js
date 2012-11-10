@@ -60,9 +60,12 @@ Currently `viewportobserver.js` only supports vertical scrolling viewport and `w
 
 #### To reveal & hide 
 
-Demo page [http://atirip.github.com/viewportobserver.js/observe.html](http://atirip.github.com/viewportobserver.js/observe.html) which holds 100 different (actually the same, but called with different GET paramaters) images (495p x 600px, 13Okb) each CSS GPU accelerated with `-webkit-transform: translate3d(0, 0, 0);`. This demo uses my [domhide.js](https://github.com/atirip/domhide.js) utility to hide DOM nodes. Scrolling is very smooth, uses not a lot of CPU power and more importantly - even old iOS devices do not crash.
+Live demo page [https://dl.dropbox.com/u/5572626/viewportobserver/observe.html](https://dl.dropbox.com/u/5572626/viewportobserver/observe.html) which holds 100 different (actually the same, but called with different GET paramaters) images (495p x 600px, 13Okb) each CSS GPU accelerated with `-webkit-transform: translate3d(0, 0, 0);`. This demo uses my [domhide.js](https://github.com/atirip/domhide.js) utility to hide DOM nodes. Scrolling is very smooth, uses not a lot of CPU power and more importantly - even old iOS devices do not crash.
 
-Theres another page [http://atirip.github.com/viewportobserver.js/lazy.html](http://atirip.github.com/viewportobserver.js/lazy.html) which implements the usual lazyload approach. Images (20, the same as above) are simply lazyloaded with `src` attribute change.
+Theres another live demo page [https://dl.dropbox.com/u/5572626/viewportobserver/lazy.html](https://dl.dropbox.com/u/5572626/viewportobserver/lazy.html) which implements the usual lazyload approach. Images (20, the same as above) are simply lazyloaded with `src` attribute change.
+
+As a bonus, DropBox is nicely slow to serve those demos above, exactly what needed :-)
+Both demos ar also included in the repo.
 
 ## Compatible
 	
