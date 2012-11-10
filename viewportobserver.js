@@ -2,7 +2,7 @@
 /*
 * MIT Licensed
 * Copyright (c) 2012, Priit Pirita, atirip@yahoo.com
-* https://github.com/atirip/bodyscrollkiller.js
+* https://github.com/atirip/vieportobserver.js
 */
 
 ;(function(window, APP) {
