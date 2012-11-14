@@ -170,8 +170,9 @@
 			}
 		})()
 
-	// only FF < 3 actually
+	// https://github.com/jquery/jquery/pull/796 no point to do a workaround
 	if ( !("getBoundingClientRect" in docElem) ) {
+		APP.observeViewport = function() {}
 		return
 	}
 
