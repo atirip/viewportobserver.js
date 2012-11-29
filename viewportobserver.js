@@ -88,7 +88,9 @@
 			// set globals, on both 0 || false is valid setting
 			;(undefined !== options.throttleDuringScroll) && (throttleDuringScroll = options.throttleDuringScroll)
 			;(undefined !== options.throttleInterval) && (throttleInterval = options.throttleInterval)
-	
+			// body is not guaranteed to be in DOM while this file is parsed
+			body || (body = doc.body)
+
 			var hide = options.hide
 			,	reveal = options.reveal ? function(node, timeout) {
 					var callback = function() { options.reveal(node) }
