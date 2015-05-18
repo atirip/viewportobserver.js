@@ -28,21 +28,22 @@ Forgot events, they are slow. Iterate and process over array of observables inst
 ## Usage
 
 **Include viewportobserver.js:**
-
-    <script src="path/to/viewportobserver.js" type="text/javascript"></script>
+```html
+<script src="path/to/viewportobserver.js" type="text/javascript"></script>
+```
 
 **To add nodes to observe:**
-
-	atirip.viewportobserver( nodes, {
-		reveal: function(node) {},
-		hide: function(node) {},
-		live: false,
-		reach: 2,
-		
-		throttleDuringScroll: false,
-		throttleInterval: 200
-	})
-
+```javascript
+atirip.viewportobserver( nodes, {
+	reveal: function(node) {},
+	hide: function(node) {},
+	live: false,
+	reach: 2,
+	
+	throttleDuringScroll: false,
+	throttleInterval: 200
+})
+```
 Where:  
 __nodes__ required, array of DOM nodes to observe ( jQuery result )  
 __reveal__ required, callback to reveal or load observable, one argument is passed to the callback - pure vanilla Javascript DOM Node  
